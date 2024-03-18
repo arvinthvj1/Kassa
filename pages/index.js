@@ -1,102 +1,192 @@
-import React from 'react';
+import React from "react";
+import Link from "next/link";
 import Grid from "@mui/material/Grid";
-import Link from 'next/link';
-import styles from '@/styles/PageTitle.module.css'
-import Features from "@/components/Dashboard/eCommerce/Features";
-import Ratings from "@/components/Dashboard/eCommerce/Ratings";
-import AudienceOverview from "@/components/Dashboard/eCommerce/AudienceOverview";
-import VisitsByDay from "@/components/Dashboard/eCommerce/VisitsByDay";
-import Impressions from "@/components/Dashboard/eCommerce/Impressions";
-import ActivityTimeline from "@/components/Dashboard/eCommerce/ActivityTimeline";
-import RevenuStatus from "@/components/Dashboard/eCommerce/RevenuStatus";
-import SalesByCountries from "@/components/Dashboard/eCommerce/SalesByCountries";
-import NewCustomers from "@/components/Dashboard/eCommerce/NewCustomers";
-import RecentOrders from "@/components/Dashboard/eCommerce/RecentOrders";
-import TeamMembersList from "@/components/Dashboard/eCommerce/TeamMembersList";
-import BestSellingProducts from "@/components/Dashboard/eCommerce/BestSellingProducts";
-import LiveVisitsOnOurSite from "@/components/Dashboard/eCommerce/LiveVisitsOnOurSite";
+import { Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import styles from "@/components/Authentication/Authentication.module.css";
+import { useRouter } from 'next/router';
 
-export default function eCommerce() {
+const SignInForm = () => {
+  const router = useRouter();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get("email"),
+      password: data.get("password"),
+    });
+    router.push('/ecommerce');
+  };
+
   return (
     <>
-      {/* Page title */}
-      <div className={styles.pageTitle}>
-        <h1>eCommerce</h1>
-        <ul>
-          <li>
-            <Link href="/">Dashboard</Link>
-          </li>
-          <li>
-            eCommerce
-          </li>
-        </ul>
-      </div>
+      <div className="authenticationBox">
+        <Box
+          component="main"
+          sx={{
+            maxWidth: "510px",
+            ml: "auto",
+            mr: "auto",
+            padding: "50px 0 100px",
+          }}
+        >
+          <Grid item xs={12} md={12} lg={12} xl={12}>
+            <Box>
+              <Typography as="h1" fontSize="28px" fontWeight="700" mb="5px">
+                Sign In{" "}
+                <img
+                  src="/images/favicon.png"
+                  alt="favicon"
+                  className={styles.favicon}
+                />
+              </Typography>
 
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
-        <Grid item xs={12} md={12} lg={12} xl={8}>
-          {/* Features */}
-          <Features />
+              <Typography fontSize="15px" mb="30px">
+                Already have an account?{" "}
+                <Link
+                  href="/authentication/sign-up"
+                  className="primaryColor text-decoration-none"
+                >
+                  Sign up
+                </Link>
+              </Typography>
 
-          {/* AudienceOverview */}
-          <AudienceOverview />
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  mb: "30px",
+                }}
+              >
+                <Link href="#" className={styles.googleBtn}>
+                  <img src="/images/google-icon.png" />
+                  Sign in with Google
+                </Link>
 
-          <Grid
-            container
-            columnSpacing={{ xs: 1, sm: 2, md: 2 }}
-          >
-            <Grid item xs={12} md={8}>
-              {/* VisitsByDay */}
-              <VisitsByDay />
-            </Grid>
+                <Link href="#" className={styles.fbBtn}>
+                  <img src="/images/fb-icon.png" />
+                  Sign in with Facebook
+                </Link>
+              </Box>
 
-            <Grid item xs={12} md={4}>
-              {/* Impressions */}
-              <Impressions />
+              <div className={styles.or}>
+                <span>or</span>
+              </div>
 
-              {/* ActivityTimeline */}
-              <ActivityTimeline />
-            </Grid>
+              <Box component="form" noValidate onSubmit={handleSubmit}>
+                <Box
+                  sx={{
+                    background: "#fff",
+                    padding: "30px 20px",
+                    borderRadius: "10px",
+                    mb: "20px",
+                  }}
+                  className="bg-black"
+                >
+                  <Grid container alignItems="center" spacing={2}>
+                    <Grid item xs={12}>
+                      <Typography
+                        component="label"
+                        sx={{
+                          fontWeight: "500",
+                          fontSize: "14px",
+                          mb: "10px",
+                          display: "block",
+                        }}
+                      >
+                        Email
+                      </Typography>
 
-            <Grid item xs={12} md={12}>
-              {/* RevenuStatus */}
-              <RevenuStatus />
-            </Grid>
+                      <TextField
+                        required
+                        fullWidth
+                        id="email"
+                        label="Email Address"
+                        name="email"
+                        autoComplete="email"
+                        InputProps={{
+                          style: { borderRadius: 8 },
+                        }}
+                      />
+                    </Grid>
+
+                    <Grid item xs={12}>
+                      <Typography
+                        component="label"
+                        sx={{
+                          fontWeight: "500",
+                          fontSize: "14px",
+                          mb: "10px",
+                          display: "block",
+                        }}
+                      >
+                        Password
+                      </Typography>
+
+                      <TextField
+                        required
+                        fullWidth
+                        name="password"
+                        label="Password"
+                        type="password"
+                        id="password"
+                        autoComplete="new-password"
+                        InputProps={{
+                          style: { borderRadius: 8 },
+                        }}
+                      />
+                    </Grid>
+                  </Grid>
+                </Box>
+
+                <Grid container alignItems="center" spacing={2}>
+                  <Grid item xs={6} sm={6}>
+                    <FormControlLabel
+                      control={
+                        <Checkbox value="allowExtraEmails" color="primary" />
+                      }
+                      label="Remember me."
+                    />
+                  </Grid>
+
+                  <Grid item xs={6} sm={6} textAlign="end">
+                    <Link
+                      href="/authentication/forgot-password"
+                      className="primaryColor text-decoration-none"
+                    >
+                      Forgot your password?
+                    </Link>
+                  </Grid>
+                </Grid>
+
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{
+                    mt: 2,
+                    textTransform: "capitalize",
+                    borderRadius: "8px",
+                    fontWeight: "500",
+                    fontSize: "16px",
+                    padding: "12px 10px",
+                    color: "#fff !important",
+                  }}
+                >
+                  Sign In
+                </Button>
+              </Box>
+            </Box>
           </Grid>
-        </Grid>
-
-        <Grid item xs={12} md={12} lg={12} xl={4}>
-          {/* Ratings */}
-          <Ratings />
-
-          {/* LiveVisitsOnOurSite */}
-          <LiveVisitsOnOurSite />
-
-          {/* SalesByLocations */}
-          <SalesByCountries />
-
-          {/* NewCustomers */}
-          <NewCustomers />
-        </Grid>
-      </Grid>
-
-      {/* Recent Orders */}
-      <RecentOrders />
-
-      <Grid
-        container
-        rowSpacing={1}
-        columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 1, xl: 2 }}
-      >
-        <Grid item xs={12} md={12} lg={12} xl={8}>
-          {/* TeamMembersList */}
-          <TeamMembersList />
-        </Grid>
-
-        <Grid item xs={12} md={12} lg={12} xl={4}>
-          {/* BestSellingProducts */}
-          <BestSellingProducts />
-        </Grid>
-      </Grid>
+        </Box>
+      </div>
     </>
   );
-}
+};
+
+export default SignInForm;

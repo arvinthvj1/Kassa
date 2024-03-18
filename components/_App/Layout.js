@@ -27,12 +27,13 @@ const Layout = ({ children }) => {
 
       <div className={`main-wrapper-content ${active && "active"}`}>
         {!(
-          router.pathname === "/authentication/sign-in" ||
-          router.pathname === "/authentication/sign-up" ||
-          router.pathname === "/authentication/forgot-password" ||
-          router.pathname === "/authentication/lock-screen" ||
-          router.pathname === "/authentication/confirm-mail" ||
-          router.pathname === "/authentication/logout"
+          router.pathname === "/" 
+          // router.pathname === "/authentication/sign-in" ||
+          // router.pathname === "/authentication/sign-up" ||
+          // router.pathname === "/authentication/forgot-password" ||
+          // router.pathname === "/authentication/lock-screen" ||
+          // router.pathname === "/authentication/confirm-mail" ||
+          // router.pathname === "/authentication/logout"
         ) && (
           <>
             <TopNavbar toogleActive={toogleActive} />

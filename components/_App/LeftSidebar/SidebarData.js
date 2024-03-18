@@ -18,111 +18,139 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 export const SidebarData = [
   {
     title: "Dashboard",
-    path: "/",
+    path: "/dashboard",
     icon: <GridViewIcon />,
     iconClosed: <KeyboardArrowRightIcon />,
     iconOpened: <KeyboardArrowDownIcon />,
 
-    subNav: [
-      {
-        title: "eCommerce",
-        path: "/ecommerce/",
-      },
-      {
-        title: "Analytics",
-        path: "/analytics/",
-      },
-      {
-        title: "Project Management",
-        path: "/project-management/",
-      },
-      {
-        title: "LMS Courses",
-        path: "/lms-courses/",
-      },
-      {
-        title: "Crypto",
-        path: "/crypto/",
-      },
-      {
-        title: "Help/Support Desk",
-        path: "/help-desk/",
-      },
-      {
-        title: "SaaS App",
-        path: "/saas-app/",
-      },
-    ],
+    // subNav: [
+    //   {
+    //     title: "eCommerce",
+    //     path: "/ecommerce/",
+    //   },
+    //   {
+    //     title: "Analytics",
+    //     path: "/analytics/",
+    //   },
+    //   {
+    //     title: "Project Management",
+    //     path: "/project-management/",
+    //   },
+    //   {
+    //     title: "LMS Courses",
+    //     path: "/lms-courses/",
+    //   },
+    //   {
+    //     title: "Crypto",
+    //     path: "/crypto/",
+    //   },
+    //   {
+    //     title: "Help/Support Desk",
+    //     path: "/help-desk/",
+    //   },
+    //   {
+    //     title: "SaaS App",
+    //     path: "/saas-app/",
+    //   },
+    // ],
   },
-  {
-    title: "Apps",
-    path: "/apps/file-manager/",
-    icon: <LayersIcon />,
-    iconClosed: <KeyboardArrowRightIcon />,
-    iconOpened: <KeyboardArrowDownIcon />,
+  // {
+  //   title: "Apps",
+  //   path: "/apps/file-manager/",
+  //   icon: <LayersIcon />,
+  //   iconClosed: <KeyboardArrowRightIcon />,
+  //   iconOpened: <KeyboardArrowDownIcon />,
 
-    subNav: [
-      {
-        title: "File Manager",
-        path: "/apps/file-manager/",
-      },
-      {
-        title: "Chat",
-        path: "/apps/chat/",
-      },
-      {
-        title: "To Do",
-        path: "/apps/to-do/",
-      },
-      {
-        title: "Calendar",
-        path: "/apps/calendar/",
-      },
-    ],
-  },
-  {
-    title: "Email",
-    path: "/email/inbox/",
-    icon: <MailOutlineIcon />,
-    iconClosed: <KeyboardArrowRightIcon />,
-    iconOpened: <KeyboardArrowDownIcon />,
+  //   subNav: [
+  //     {
+  //       title: "File Manager",
+  //       path: "/apps/file-manager/",
+  //     },
+  //     {
+  //       title: "Chat",
+  //       path: "/apps/chat/",
+  //     },
+  //     {
+  //       title: "To Do",
+  //       path: "/apps/to-do/",
+  //     },
+  //     {
+  //       title: "Calendar",
+  //       path: "/apps/calendar/",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "Email",
+  //   path: "/email/inbox/",
+  //   icon: <MailOutlineIcon />,
+  //   iconClosed: <KeyboardArrowRightIcon />,
+  //   iconOpened: <KeyboardArrowDownIcon />,
 
-    subNav: [
-      {
-        title: "Inbox",
-        path: "/email/inbox/",
-      },
-      {
-        title: "Read Email",
-        path: "/email/read-email/",
-      },
-    ],
-  },
+  //   subNav: [
+  //     {
+  //       title: "Inbox",
+  //       path: "/email/inbox/",
+  //     },
+  //     {
+  //       title: "Read Email",
+  //       path: "/email/read-email/",
+  //     },
+  //   ],
+  // },
   {
-    title: "Contact List",
-    path: "/contact-list/",
+    title: "Staff List",
+    path: "/contact-list/members-list/",
     icon: <PostAddIcon />,
     iconClosed: <KeyboardArrowRightIcon />,
     iconOpened: <KeyboardArrowDownIcon />,
 
-    subNav: [
-      {
-        title: "Contact List",
-        path: "/contact-list/",
-      },
-      {
-        title: "Members Grid",
-        path: "/contact-list/contact-list2/",
-      },
-      {
-        title: "Members List",
-        path: "/contact-list/members-list/",
-      },
-      {
-        title: "Profile",
-        path: "/contact-list/profile/",
-      },
-    ],
+    // subNav: [
+    //   {
+    //     title: "Contact List",
+    //     path: "/contact-list/",
+    //   },
+    //   {
+    //     title: "Members Grid",
+    //     path: "/contact-list/contact-list2/",
+    //   },
+    //   {
+    //     title: "Members List",
+    //     path: "/contact-list/members-list/",
+    //   },
+    //   {
+    //     title: "Profile",
+    //     path: "/contact-list/profile/",
+    //   },
+    // ],
+  },
+  {
+    title: "RFQs",
+    path: "/contact-list/members-list/",
+    icon: <PostAddIcon />,
+    iconClosed: <KeyboardArrowRightIcon />,
+    iconOpened: <KeyboardArrowDownIcon />,
+  },
+  {
+    title: "Quotations",
+    path: "/contact-list/members-list/",
+    icon: <PostAddIcon />,
+    iconClosed: <KeyboardArrowRightIcon />,
+    iconOpened: <KeyboardArrowDownIcon />,
+  },
+  {
+    title: "Purchase Orders",
+    path: "/contact-list/members-list/",
+    icon: <PostAddIcon />,
+    iconClosed: <KeyboardArrowRightIcon />,
+    iconOpened: <KeyboardArrowDownIcon />,
+  },
+  {
+    title: "Measurement Request",
+    path: "/contact-list/members-list/",
+    icon: <PostAddIcon />,
+    iconClosed: <KeyboardArrowRightIcon />,
+    iconOpened: <KeyboardArrowDownIcon />,
   },
   {
     title: "Projects",
@@ -148,16 +176,16 @@ export const SidebarData = [
         title: "Team",
         path: "/projects/team/",
       },
+      // {
+      //   title: "Task",
+      //   path: "/projects/task/",
+      // },
+      // {
+      //   title: "User",
+      //   path: "/projects/user/",
+      // },
       {
-        title: "Task",
-        path: "/projects/task/",
-      },
-      {
-        title: "User",
-        path: "/projects/user/",
-      },
-      {
-        title: "Kanban board",
+        title: "Pending Works",
         path: "/projects/kanban-board/",
       },
     ],
